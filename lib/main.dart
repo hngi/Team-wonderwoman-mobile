@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
           title: Center(
             child: Text('Ifitness App',
             style: TextStyle(color: Colors.white,
-            fontSize: 25.0),),
+            fontSize: 25.0,
+            fontFamily: 'Work Sans'),
+            ),
           ),
         ),
       )
