@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/brandName.dart';
 
+import 'screens/home.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -10,20 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'iFitness',
-      home:Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Center(
-            child: Text('iFitness App',
-              style: TextStyle(color: Colors.white,
-                  fontSize: 25.0,
-                  fontFamily: 'Work Sans'),
-            ),
-          ),
-        ),
-        body:brandName()
-      )
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xfff8f8f8),
+//        textTheme: Theme.of(context).textTheme.apply(displayColor:Color(0xff2d438d)),
+      ),
+      home: HomePage()
 
     );
   }
