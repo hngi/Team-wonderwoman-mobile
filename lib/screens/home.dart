@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/category_card.dart';
-import '../widgets/brandName.dart';
-import 'details.dart';
+import 'excercise.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,6 +48,14 @@ class _HomePageState extends State<HomePage> {
                           color: Color(0xff2d438d),
 
                         ),),
+                        Center(
+                          child: Text('What would you like to do today?',
+                          style: TextStyle(
+                            fontFamily: 'Work Sans/WorkSans-Regular',
+                            fontSize: 18.0,
+                            color: Color(0xff2d438d),
+                          ),),
+                        ),
                         SizedBox(height:80.0),
                         Expanded(
                             child: GridView.count(
@@ -61,29 +68,55 @@ class _HomePageState extends State<HomePage> {
                                 ExerciseCategory(
                                   title: "Running",
                                   svgSrc: "images/running.svg",
-                                  press: () {},
+                                  time:"30-45 mins",
+
                                 ),
                                 ExerciseCategory(
                                   title: "Yoga",
                                   svgSrc: "images/yoga.svg",
-                                  press: () {},
+                                  time: "30-45 mins",
+
+
                                 ),
                                 ExerciseCategory(
                                   title: "Pilates",
                                   svgSrc: "images/pilates.svg",
-                                  press: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) {
-                                        return DetailsScreen();
-                                      }),
-                                    );
-                                  },
+                                  time:"25-40 mins",
+
                                 ),
                                 ExerciseCategory(
                                   title: "Sit Ups",
                                   svgSrc: "images/situps.svg",
-                                  press: () {},
+                                  time: "20 mins",
+
+
+                                ),
+
+                                ExerciseCategory(
+                                  title: "Push Ups",
+                                  svgSrc: "images/pushup.svg",
+                                  time:"15-20 mins",
+
+                                ),
+                                ExerciseCategory(
+                                  title: "Squats",
+                                  svgSrc: "images/squats.svg",
+                                  time:"7-15 mins",
+
+
+                                ),
+                                ExerciseCategory(
+                                  title: "Aerobics",
+                                  svgSrc: "images/aerobics.svg",
+                                  time:"12 mins",
+
+                                ),
+                                ExerciseCategory(
+                                  title: "Stretches",
+                                  svgSrc: "images/stretches.svg",
+                                  time:"3-7 mins",
+
+
                                 ),
                               ],
                             ))

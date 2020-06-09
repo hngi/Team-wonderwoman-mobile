@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/brandName.dart';
 
+import 'screens/excercise.dart';
 import 'screens/home.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xfff8f8f8),
 //        textTheme: Theme.of(context).textTheme.apply(displayColor:Color(0xff2d438d)),
       ),
-      home: HomePage()
+      home: HomePage(),
+
 
     );
   }
