@@ -44,7 +44,8 @@ class ExerciseCard extends StatelessWidget {
                     ),),
                 ),
                 Center(
-                  child: SvgPicture.asset(svgSrc),
+                  child: SvgPicture.asset(svgSrc,
+                  height: size.height * .15),
                 )
               ],
             ),
