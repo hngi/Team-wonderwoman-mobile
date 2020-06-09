@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifitness/widgets/brandName.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,15 +15,17 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.blue,
           title: Center(
-            child: Text('Ifitness App',
-            style: TextStyle(color: Colors.white,
-            fontSize: 25.0,
-            fontFamily: 'Work Sans'),
+            child: Text('iFitness App',
+              style: TextStyle(color: Colors.white,
+                  fontSize: 25.0,
+                  fontFamily: 'Work Sans'),
             ),
           ),
         ),
+        body:brandName()
       )
 
     );
   }
 }
+
