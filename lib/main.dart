@@ -12,15 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'iFitness',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xfff8f8f8),
+        debugShowCheckedModeBanner: false,
+        title: 'iFitness',
+        theme: ThemeData(
+          scaffoldBackgroundColor: Color(0xfff8f8f8),
 //        textTheme: Theme.of(context).textTheme.apply(displayColor:Color(0xff2d438d)),
-      ),
-      home: HomePage()
-
-    );
+        ),
+        home: HomePage());
   }
 }
-
