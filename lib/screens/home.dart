@@ -12,24 +12,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
     var size=MediaQuery.of(context)
     .size; // this will give us the total height and width of our device.
     String greetingTime=greeting();
-    return Scaffold(
 
-      bottomNavigationBar: BottomNavigation(),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            // the height of this container is 45% total of the height.
-            height: size.height * .45,
-            decoration: BoxDecoration(
-              color:Color(0xff72c3f9),
-              image:DecorationImage(
-                alignment: Alignment.centerLeft,
-                image:AssetImage('images/coverbk.png')
-              )
+    return Scaffold(
+        bottomNavigationBar: BottomNavigation(),
+        body: Stack(
+          children: <Widget>[
+            Container(
+              // the height of this container is 45% total of the height.
+              height: size.height * .45,
+              decoration: BoxDecoration(
+                  color: Color(0xff72c3f9),
+                  image: DecorationImage(
+                      alignment: Alignment.centerLeft,
+                      image: AssetImage('images/coverbk.png'))),
             ),
+
           ),
 
           SafeArea(
@@ -127,6 +128,7 @@ class _HomePageState extends State<HomePage> {
 
 
     );
+ 
   }
 
   String greeting(){
