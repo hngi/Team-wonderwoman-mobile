@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../screens/excercise.dart';
-import '../screens/excercise.dart';
-import '../screens/excercise.dart';
+
 
 //This class contains the cards that will be displayed on the home page of the app.
 class ExerciseCategory extends StatefulWidget {
   final String svgSrc;
   final String title;
   final String time;
+
 
 
   ExerciseCategory({
@@ -21,7 +21,9 @@ class ExerciseCategory extends StatefulWidget {
 }
 
 class _ExerciseCategoryState extends State<ExerciseCategory> {
+   bool alreadySaved=false;
 
+   final Set<ExerciseCategory>_saved=Set<ExerciseCategory>();
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +47,18 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
           color:Colors.transparent,
           child: InkWell(
             onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder:(context){
+                return SingleExercise(
+                    title: '${widget.title}',
+                    svgSrc:'${widget.svgSrc}',
+                    time:'${widget.time}');
+              }));
 
             },
-            onDoubleTap: (){
+            onDoubleTap: (
+
+
+                ){
 
             },
             child: Padding(
@@ -59,13 +70,7 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
                     child:IconButton(
                         icon:Icon(Icons.favorite_border),
                         onPressed:(){
-                          Navigator.push(context, MaterialPageRoute(builder:(context){
-                             return SingleExercise(
-                                 title: '${widget.title}',
-                                 svgSrc:'${widget.svgSrc}',
-                                 time:'${widget.time}');
-                          }));
-                        },
+                          },
                     )
                   ),
                   Spacer(), // creates space between the children of the column widget
@@ -88,5 +93,13 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
 
     );
   }
+
+  Widget _buildRow(ExerciseCategory category){
+    final bool alreadySaved=_saved.contains(category);
+//    final Iterable<ListTile>tiles=_saved.map((category) => null)
+    return ListTile();
+  }
+
+
 }
 

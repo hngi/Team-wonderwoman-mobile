@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ifitness/widgets/brandName.dart';
-
-import 'screens/excercise.dart';
 import 'screens/home.dart';
 
 void main() {
