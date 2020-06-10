@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:ifitness/database.dart';
 
@@ -108,4 +109,5 @@ class UserDetails extends StatelessWidget {
   }
 }
  
+
 
