@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifitness/screens/details.dart';
 import 'package:ifitness/widgets/brandName.dart';
 
 import 'screens/excercise.dart';
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
         debugShowCheckedModeBanner: false,
         title: 'iFitness',
         theme: ThemeData(
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
 
       ),
       home: HomePage(),
+
 
 
     );
