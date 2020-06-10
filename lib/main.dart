@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifitness/screens/details.dart';
 import 'package:ifitness/widgets/brandName.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body:brandName()
+        
       )
 
     );
