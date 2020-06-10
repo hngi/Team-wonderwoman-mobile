@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  SharedPreferencesHelper object;
+  SharedPreferencesHelper object=new SharedPreferencesHelper();
   String _name="";
 
   @override void initState() {

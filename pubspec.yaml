@@ -73,7 +73,7 @@ flutter:
       fonts:
         - asset: fonts/static/WorkSans-Regular.ttf
         - asset: fonts/static/WorkSans-Bold.ttf
-        - asset: fonts/static/WorkSans-Light.ttf
+        - asset: fonts/static/WorkSans-ExtraLight.ttf
   #         style: italic
     - family: Pacifico
       fonts:

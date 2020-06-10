@@ -25,8 +25,20 @@ class _FavouritesPageState extends State<FavouritesPage> {
                         alignment: Alignment.centerLeft,
                         image: AssetImage('images/coverbk.png')))),
             SafeArea(
-              child: Container(
-                child:Text('Your Favourite exercises go here')
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 45.0, left: 16),
+                    child: Text('Favourites',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Work Sans/WorkSans-Bold',
+                        fontSize: 30.0,
+                        color: Color(0xff2d438d),
+                      ),),
+                  ),
+                ],
               ),
             )
 

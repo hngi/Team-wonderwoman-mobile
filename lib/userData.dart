@@ -2,6 +2,10 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesHelper{
+  static SharedPreferencesHelper _instance;
+  factory SharedPreferencesHelper() => _instance ??= new SharedPreferencesHelper._();
+
+  SharedPreferencesHelper._();
   ///
   /// Instantiation of the SharedPreferences library
   ///

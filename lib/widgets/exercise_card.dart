@@ -27,12 +27,16 @@ class ExerciseCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(title,
-                  style: TextStyle(
-                    fontSize: 48.0,
-                    fontFamily: 'Work sans/WorkSans-Bold',
-                    color:Color(0xff2d438d),
-                  ),),
+                Padding(
+                  padding: const EdgeInsets.only(top: 45.0, left: 16),
+                  child: Text(title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 30.0,
+                      fontFamily: 'Work sans/WorkSans-Bold',
+                      color:Color(0xff2d438d),
+                    ),),
+                ),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Text(time,

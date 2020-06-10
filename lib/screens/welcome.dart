@@ -13,20 +13,23 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             brandName(),
-            Text(
-            'WELCOME TO IFitness LET US GET YOU INTO SHAPE',textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Work Sans/WorkSans-Light',
-                fontSize: 34.0,
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+              'WELCOME TO IFitness,LET US GET YOU INTO SHAPE',textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Work Sans/WorkSans-ExtraLight',
+                  fontSize: 34.0,
 
+                ),
               ),
             ),
 
             MaterialButton(
-               elevation: 6.0,
+               elevation: 8.0,
                 child: Text('TAP TO GET STARTED',
                   style:TextStyle(
                   color: Colors.white,
