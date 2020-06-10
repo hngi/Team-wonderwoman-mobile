@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/category_card.dart';
-import 'excercise.dart';
-
+import 'package:intl/intl.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -15,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context)
     .size; // this will give us the total height and width of our device.
-    print(size);
+    String greetingTime=greeting();
     return Scaffold(
 
       bottomNavigationBar: BottomNavigation(),
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height:45.0),
-                        Text('Good Evening, \nUser',
+                        Text('$greetingTime, \nUser',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Work Sans/WorkSans-Bold',
@@ -48,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                           color: Color(0xff2d438d),
 
                         ),),
+                        SizedBox(height: 20.0),
                         Center(
                           child: Text('What would you like to do today?',
                           style: TextStyle(
@@ -127,5 +127,19 @@ class _HomePageState extends State<HomePage> {
 
 
     );
+  }
+
+  String greeting(){
+    var now = new DateTime.now();
+    var currentTime=now.hour;
+    if(currentTime < 12){
+      return 'Good Morning';
+    }
+    else if (currentTime > 12 && currentTime < 17){
+      return 'Good Afternoon';
+    }
+    else{
+      return 'Good Evening';
+    }
   }
 }
