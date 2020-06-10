@@ -17,19 +17,19 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
     setState(() {
       _selectedIndex = index;
       if(_selectedIndex==0){
-        Navigator.push(context,
+        Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
               return HomePage();
             }));
       }
       else if(_selectedIndex==1){
-        Navigator.push(context,
+        Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
               return FavouritesPage();
             }));
       }
       else{
-        Navigator.push(context,
+        Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
               return ProfileScreen();
             }));

@@ -3,13 +3,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/category_card.dart';
-import 'package:intl/intl.dart';
+import 'package:ifitness/userData.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  SharedPreferencesHelper object;
+  String _name="";
+
+  @override void initState() {
+
+    object.getUserName().then((updateName));
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -37,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height:45.0),
-                        Text('$greetingTime, \nUser',
+                        Text('$greetingTime, $_name',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Work Sans/WorkSans-Bold',
@@ -128,7 +136,14 @@ class _HomePageState extends State<HomePage> {
 
 
   }
+  //Updates the preferred name of user
+  void updateName(String value){
+    setState(() {
+      this._name=value;
+    });
+  }
 
+  // Looks at the time of the day and shows a particular greeting
   String greeting(){
     var now = new DateTime.now();
     var currentTime=now.hour;

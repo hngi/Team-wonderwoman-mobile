@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ifitness/widgets/bottom_navigation.dart';
+
+
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -13,6 +16,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
       body: SingleChildScrollView(
         child: Stack(
           children: <Widget>[
@@ -47,8 +51,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: CircleAvatar(
                         radius: 75,
-                        backgroundImage: NetworkImage(
-                            'https://pbs.twimg.com/profile_images/1083303099886985222/4vHpZnpa_400x400.jpg'),
+                        backgroundImage: AssetImage(
+                            'images/hng.jpg'),
                       ),
                     ),
                   ),
@@ -89,13 +93,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   ProfileField(
                     fieldName: 'Weight',
-                    fieldInput: 'Weight In Pound',
+                    fieldInput: 'Weight In Kg',
                     enable: enable,
                     keyboard: TextInputType.number,
                   ),
                   ProfileField(
                     fieldName: 'Height',
-                    fieldInput: 'Height In Feet',
+                    fieldInput: 'Height In Centimeters',
                     enable: enable,
                     keyboard: TextInputType.number,
                   ),

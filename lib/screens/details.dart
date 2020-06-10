@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter/cupertino.dart';
-import 'package:ifitness/database.dart';
-
-
+import 'package:ifitness/screens/home.dart';
+import 'package:ifitness/userData.dart';
 
 
 class UserDetails extends StatelessWidget {
@@ -11,13 +9,15 @@ class UserDetails extends StatelessWidget {
   final heightTextController = new TextEditingController();
   final weightTextController = new TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  final usersManager = UsersManager();
   @override
   Widget build(BuildContext context) {
+    var fontSytle = const TextStyle(
+        fontFamily: 'Work Sans/WorkSans-Regular',
+        fontSize: 14.0);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
@@ -36,8 +36,10 @@ class UserDetails extends StatelessWidget {
               Text(
                 'Please fill in the details to get started',
                 textAlign: TextAlign.center,
+                style: fontSytle,
               ),
-              Text('What do we call you?'),
+              Text('What do we call you?',
+              style: fontSytle,),
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                   child: TextFormField(
@@ -52,7 +54,8 @@ class UserDetails extends StatelessWidget {
                       return null;
                     },
                   )),
-              Text('How much do you weigh?'),
+              Text('How much do you weigh in Kgs?',
+              style: fontSytle,),
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                   child: TextFormField(
@@ -68,7 +71,8 @@ class UserDetails extends StatelessWidget {
                       return null;
                     },
                   )),
-              Text('How tall are you?'),
+              Text('How tall are you in Centimeters?',
+              style:fontSytle),
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                   child: TextFormField(
@@ -86,12 +90,14 @@ class UserDetails extends StatelessWidget {
                   )),
               MaterialButton(
                   child: Text("TAP TO CONTINUE"),
-                  color: Colors.indigo,
+                  color: Color(0xff2d438d),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                   onPressed: () async {
                     await saveCredentials();
                     _formKey.currentState.reset();
-                    // Navigator.push(context, MaterialPageRoute(builder: (_)=> )); //the next page after user feeds in necessary credentials
+                     Navigator.push(context, MaterialPageRoute(builder: (context){
+                       return HomePage();
+                     })); //the next page after user feeds in necessary credentials
                   })
             ],
           ),
@@ -101,13 +107,18 @@ class UserDetails extends StatelessWidget {
   }
 
    saveCredentials() {
+    SharedPreferencesHelper object;
     FormState formState = _formKey.currentState;
     if (formState.validate()) {
-      USER user = new USER(name: nameTextController.text, weight: weightTextController.text, height: heightTextController.text);
-      usersManager.insertUsers(user).then((user)=>print('$user has been added'));
+
+     String name=nameTextController.text;
+     String weight=weightTextController.text;
+     String height=heightTextController.text;
+     // save the details
+     object.saveUserName(name);
+     object.saveUserHeight(height);
+     object.saveUserWeight(weight);
     }
   }
 }
  
-
-

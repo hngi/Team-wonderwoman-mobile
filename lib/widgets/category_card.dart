@@ -70,6 +70,9 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
                     child:IconButton(
                         icon:Icon(Icons.favorite_border),
                         onPressed:(){
+                          if(alreadySaved==false){
+
+                          }
                           },
                     )
                   ),
