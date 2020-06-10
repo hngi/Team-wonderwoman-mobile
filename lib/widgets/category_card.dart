@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../screens/excercise.dart';
+
 
 //This class contains the cards that will be displayed on the home page of the app.
-class ExerciseCategory extends StatelessWidget {
+class ExerciseCategory extends StatefulWidget {
   final String svgSrc;
   final String title;
-  final Function press;
-  final Function favourites;
+  final String time;
 
-  const ExerciseCategory({
-    Key key,
-    this.svgSrc,
-    this.title,
-    this.press,
-    this.favourites,
 
-}): super (key:key);
 
+  ExerciseCategory({
+    @required this.svgSrc,@required this.title,@required this.time
+
+});
+
+  @override
+  _ExerciseCategoryState createState() => _ExerciseCategoryState();
+}
+
+class _ExerciseCategoryState extends State<ExerciseCategory> {
+   bool alreadySaved=false;
+
+   final Set<ExerciseCategory>_saved=Set<ExerciseCategory>();
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius:BorderRadius.circular(13.0),
-      child: Container(
-        decoration: BoxDecoration(
+        child: Container(
+          decoration: BoxDecoration(
           color:Colors.white,
           borderRadius: BorderRadius.circular(13.0),
           boxShadow: [
@@ -39,22 +46,47 @@ class ExerciseCategory extends StatelessWidget {
         child:Material(
           color:Colors.transparent,
           child: InkWell(
-            onTap: press,
-            onDoubleTap: favourites,
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder:(context){
+                return SingleExercise(
+                    title: '${widget.title}',
+                    svgSrc:'${widget.svgSrc}',
+                    time:'${widget.time}');
+              }));
+
+            },
+            onDoubleTap: (
+
+
+                ){
+
+            },
             child: Padding(
                 padding: EdgeInsets.all(20.0),
               child: Column(
                 children: <Widget>[
+                  Align(
+                    alignment: Alignment.topRight,
+                    child:IconButton(
+                        icon:Icon(Icons.favorite_border),
+                        onPressed:(){
+                          if(alreadySaved==false){
+
+                          }
+                          },
+                    )
+                  ),
                   Spacer(), // creates space between the children of the column widget
-                  Expanded(child: SvgPicture.asset(svgSrc)),
+                  Expanded(child: SvgPicture.asset('${widget.svgSrc}')),
                   Spacer(),
                   Text(
-                    title,
-                  textAlign: TextAlign.center,
+                    '${widget.title}',
+                    textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme
                         .headline6
-                        .copyWith(fontSize: 14.0),)
+                        .copyWith(fontSize: 14.0),),
+
                 ],
               ),
             ),
@@ -64,4 +96,13 @@ class ExerciseCategory extends StatelessWidget {
 
     );
   }
+
+  Widget _buildRow(ExerciseCategory category){
+    final bool alreadySaved=_saved.contains(category);
+//    final Iterable<ListTile>tiles=_saved.map((category) => null)
+    return ListTile();
+  }
+
+
 }
+
