@@ -30,10 +30,7 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.centerLeft,
                       image: AssetImage('images/coverbk.png'))),
             ),
-
-          ),
-
-          SafeArea(
+            SafeArea(
               child:Padding(
                   padding: EdgeInsets.symmetric(horizontal:20.0,),
                   child: Column(
@@ -122,13 +119,14 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ))
                       ],
-              ),))
+              ),)),
         ],
       )
 
 
     );
- 
+
+
   }
 
   String greeting(){
