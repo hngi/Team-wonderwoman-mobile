@@ -48,7 +48,7 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
           color:Colors.transparent,
           child: InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder:(context){
+              Navigator.of(context).push( MaterialPageRoute(builder:(context){
                 return SingleExercise(
                     title: '${widget.title}',
                     svgSrc:'${widget.svgSrc}',
