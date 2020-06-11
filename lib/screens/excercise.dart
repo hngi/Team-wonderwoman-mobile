@@ -13,8 +13,12 @@ class SingleExercise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      bottomNavigationBar: BottomNavigation(),
+      backgroundColor: Color(0xff72c3f9),
+appBar: AppBar(
+  elevation: 0.0,
+  backgroundColor: Colors.transparent
+),
+    
       body: SafeArea(
         child: Column(
           children: <Widget>[
