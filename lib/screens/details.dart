@@ -40,6 +40,7 @@ class UserDetails extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                         child: TextFormField(
+                          keyboardType: TextInputType.text,
                           controller: nameTextController,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -56,7 +57,7 @@ class UserDetails extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                         child: TextFormField(
-                          keyboardType: TextInputType.numberWithOptions(),
+                          keyboardType: TextInputType.number,
                           controller: weightTextController,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -69,16 +70,16 @@ class UserDetails extends StatelessWidget {
                             return null;
                           },
                         )),
-                    Text('How tall are you in Centimeters?',
+                    Text('How tall are you in Meters?',
                     style:fontSytle),
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
                         child: TextFormField(
-                          keyboardType: TextInputType.numberWithOptions(),
+                          keyboardType: TextInputType.number,
                           controller: heightTextController,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            hintText: 'e.g 165',
+                            hintText: 'e.g 1.65',
                           ),
                           validator: (value) {
                             if (value.isEmpty) {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
+import 'package:ifitness/userData.dart';
+import 'dart:math';
 
 
 
@@ -12,8 +14,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool enable = false;
   String edit = 'EDIT';
 
+  SharedPreferencesHelper object=new SharedPreferencesHelper();
+  String _userName='';
+  String _userWeight='';
+  String _userHeight='';
+
+
+  @override void initState() {
+    object.getUserName().then((updateName));
+    object.getUserWeight().then((updateWeight));
+    object.getUserHeight().then((updateHeight));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
+  String bmi=bodyMassIndex(_userWeight, _userHeight).toString();
+
     var size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: BottomNavigation(),
@@ -87,19 +105,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   ProfileField(
                     fieldName: 'Name',
-                    fieldInput: 'Username',
+                    fieldInput: _userName,
                     enable: enable,
                     keyboard: TextInputType.text,
                   ),
                   ProfileField(
                     fieldName: 'Weight',
-                    fieldInput: 'Weight In Kg',
+                    fieldInput: _userWeight,
                     enable: enable,
                     keyboard: TextInputType.number,
                   ),
                   ProfileField(
                     fieldName: 'Height',
-                    fieldInput: 'Height In Centimeters',
+                    fieldInput: _userHeight,
                     enable: enable,
                     keyboard: TextInputType.number,
                   ),
@@ -129,7 +147,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Center(
                             child: Text(
-                              '22.6',
+                              bmi,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -150,7 +168,45 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+
+
+
+  void updateName(String name){
+    setState(() {
+      this._userName=name;
+    });
+  }
+
+   void updateWeight(String weight){
+    setState(() {
+      this._userWeight=weight;
+    });
+  }
+
+   void updateHeight(String height){
+    setState(() {
+      this._userHeight=height;
+      
+    });
+  }
+
 }
+
+//Function to calculate body mass Index
+
+double bodyMassIndex(String weight, String height){
+  var newWeight=int.tryParse(weight);
+  var newHeight=int.tryParse(height);
+  
+
+  var heightSquared=pow(newHeight,2);
+  var result=newWeight/heightSquared;
+
+  return result;
+
+}
+
+
 
 class ProfileField extends StatelessWidget {
   final String fieldName;

@@ -16,22 +16,25 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if(_selectedIndex==0){
+      if(index==0){
+         _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return HomePage();
+              return new HomePage();
             }));
       }
-      else if(_selectedIndex==1){
+      else if(index==1){
+         _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return FavouritesPage();
+              return new FavouritesPage();
             }));
       }
       else{
+         _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return ProfileScreen();
+              return new ProfileScreen();
             }));
       }
 

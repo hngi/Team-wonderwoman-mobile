@@ -22,7 +22,7 @@ class SharedPreferencesHelper{
     return  pref.setString(_kUserName, name);
 
   }
- Future<String>getUserName()async{
+  Future<String>getUserName()async{
    SharedPreferences pref= await SharedPreferences.getInstance();
    return pref.getString(_kUserName)?? 'User';
 
@@ -35,7 +35,7 @@ class SharedPreferencesHelper{
   }
   Future<String>getUserWeight()async{
     SharedPreferences pref= await SharedPreferences.getInstance();
-    return pref.getString(_kUserWeight) ?? '';
+    return pref.getString(_kUserWeight);
 
 
   }
@@ -47,7 +47,7 @@ class SharedPreferencesHelper{
   }
   Future<String>getUserHeight()async{
     SharedPreferences pref= await SharedPreferences.getInstance();
-    return pref.getString(_kUserHeight)?? '';
+    return pref.getString(_kUserHeight);
 
 
   }
