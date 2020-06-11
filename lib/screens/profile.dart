@@ -38,7 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
 
-  String bmi=bodyMassIndex(_userWeight, _userHeight).toString();
+  String bmi=bodyMassIndex(_userWeight, _userHeight,2).toString();
 
     var size = MediaQuery.of(context).size;
     return Scaffold(
@@ -202,15 +202,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 //Function to calculate body mass Index
 
-int bodyMassIndex(String weight, String height){
+double bodyMassIndex(String weight, String height,int places){
   var newWeight=double.parse(weight);
   var newHeight=double.parse(height);
-  
+  double mod = pow(10.0, places);
 
-  var heightSquared=pow(newHeight,2);
+
+  double heightSquared=pow(newHeight,2);
   double result=newWeight/heightSquared;
 
-  return result.round();
+  return result.round().toDouble()/mod;
 
 }
 

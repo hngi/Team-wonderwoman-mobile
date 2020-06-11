@@ -16,13 +16,11 @@ class _HomePageState extends State<HomePage> {
   String _name="";
 
   @override void initState() {
-    // SharedPreferences pref;
     SharedPreferences.getInstance().then((prefs){
-      // pref = prefs;
 
       object.getUserName(prefs).then((value){
       setState((){
-        _name = value + "something";
+        _name = value;
       });
     });
     });
@@ -57,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height:45.0),
-                        Text('$greetingTime, $_name',
+                        Text('$greetingTime, \n$_name',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Work Sans/WorkSans-Bold',
@@ -125,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 ExerciseCategory(
                                   title: "Aerobics",
-                                  svgSrc: "images/aerobics.svg",
+                                  svgSrc: "images/workout.svg",
                                   time:"12 mins",
 
                                 ),
