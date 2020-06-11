@@ -29,6 +29,7 @@ dependencies:
   http: any
   rxdart: ^0.23.1
   shared_preferences: any
+  timer_count_down: ^1.0.3
 #  fluttertoast: ^3.1.3
 
 
