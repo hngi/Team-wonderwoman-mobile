@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifitness/widgets/control_screen.dart';
 import 'screens/welcome.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home: WelcomeScreen(),
+      home: ControlScreen(),
 
 
 

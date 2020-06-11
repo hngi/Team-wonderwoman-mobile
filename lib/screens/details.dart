@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ifitness/screens/home.dart';
 import 'package:ifitness/userData.dart';
 import 'package:ifitness/widgets/brandName.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class UserDetails extends StatefulWidget {
@@ -122,7 +123,6 @@ class _UserDetailsState extends State<UserDetails> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                         onPressed: () async {
                           await saveCredentials();
-                           _formKey.currentState.reset();
                           //the next page after user feeds in necessary credentials
                            Navigator.push(context, MaterialPageRoute(builder: (context){
                              return HomePage();  
@@ -140,15 +140,21 @@ class _UserDetailsState extends State<UserDetails> {
     );
   }
 
-   saveCredentials() {
+   saveCredentials() async {
     SharedPreferencesHelper object=new SharedPreferencesHelper();
+
+     SharedPreferences prefs = await  SharedPreferences.getInstance();
     // FormState formState = _formKey.currentState;
     if (_formKey.currentState.validate()) {
      // save the details
-     object.saveUserName(nameTextController.text);
-     object.saveUserHeight(heightTextController.text);
-     object.saveUserWeight(weightTextController.text);
+     object.saveUserName(nameTextController.text,prefs);
+     object.saveUserHeight(heightTextController.text,prefs);
+     object.saveUserWeight(weightTextController.text,prefs);
     }
   }
+
+  // Initialize sharedpreferences in this file
+
+  // then inject the single sharedpreferences object in all the methods
 }
  

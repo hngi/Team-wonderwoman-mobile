@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/userData.dart';
 import 'dart:math';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 
@@ -21,9 +22,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 
   @override void initState() {
-    object.getUserName().then((updateName));
-    object.getUserWeight().then((updateWeight));
-    object.getUserHeight().then((updateHeight));
+    //SharedPreferences pref;
+    SharedPreferences.getInstance().then((prefs){
+      //pref = prefs;
+
+      object.getUserName(prefs).then(updateName);
+    object.getUserWeight(prefs).then(updateWeight);
+    object.getUserHeight(prefs).then(updateHeight);
+    });
+
+
     super.initState();
   }
 

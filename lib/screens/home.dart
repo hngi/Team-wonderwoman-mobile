@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/category_card.dart';
 import 'package:ifitness/userData.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -14,8 +16,18 @@ class _HomePageState extends State<HomePage> {
   String _name="";
 
   @override void initState() {
+    // SharedPreferences pref;
+    SharedPreferences.getInstance().then((prefs){
+      // pref = prefs;
 
-    object.getUserName().then((updateName));
+      object.getUserName(prefs).then((value){
+      setState((){
+        _name = value + "something";
+      });
+    });
+    });
+
+
     super.initState();
   }
   @override
