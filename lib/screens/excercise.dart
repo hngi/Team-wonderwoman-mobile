@@ -18,7 +18,7 @@ appBar: AppBar(
   elevation: 0.0,
   backgroundColor: Colors.transparent
 ),
-    
+    bottomNavigationBar: BottomNavigation(),
       body: SafeArea(
         child: Column(
           children: <Widget>[
