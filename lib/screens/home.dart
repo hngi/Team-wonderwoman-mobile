@@ -4,18 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/category_card.dart';
 import 'package:ifitness/userData.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  SharedPreferencesHelper object;
+  SharedPreferencesHelper object=new SharedPreferencesHelper();
   String _name="";
 
   @override void initState() {
+    SharedPreferences.getInstance().then((prefs){
 
-    object.getUserName().then((updateName));
+      object.getUserName(prefs).then((value){
+      setState((){
+        _name = value;
+      });
+    });
+    });
+
+
     super.initState();
   }
   @override
@@ -26,7 +36,6 @@ class _HomePageState extends State<HomePage> {
     String greetingTime=greeting();
 
     return Scaffold(
-        bottomNavigationBar: BottomNavigation(),
         body: Stack(
           children: <Widget>[
             Container(
@@ -45,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height:45.0),
-                        Text('$greetingTime, $_name',
+                        Text('$greetingTime, \n$_name',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Work Sans/WorkSans-Bold',
@@ -113,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 ExerciseCategory(
                                   title: "Aerobics",
-                                  svgSrc: "images/aerobics.svg",
+                                  svgSrc: "images/workout.svg",
                                   time:"12 mins",
 
                                 ),
