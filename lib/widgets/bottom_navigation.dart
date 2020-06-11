@@ -10,6 +10,8 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationBarState extends State<BottomNavigation> {
+ 
+
   int _selectedIndex = 0;
 
   // function when the icon is tapped it takes the selected index and change the screen
@@ -17,31 +19,33 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
     setState(() {
       _selectedIndex = index;
       if(index==0){
-         _selectedIndex = index;
+        _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return new HomePage();
+              return  HomePage();
             }));
       }
       else if(index==1){
-         _selectedIndex = index;
+        _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return new FavouritesPage();
+              return  FavouritesPage();
             }));
       }
       else{
-         _selectedIndex = index;
+        _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return new ProfileScreen();
+              return  ProfileScreen();
             }));
       }
 
     });
   }
+
   @override
   Widget build(BuildContext context) {
+
     return Container(
       child: BottomNavigationBar(
         items:const <BottomNavigationBarItem>[
@@ -70,8 +74,6 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
        currentIndex: _selectedIndex,
         selectedItemColor: Color(0xff2d438d),
         onTap: _onItemTapped,
-      ),
-    );
+      ));
   }
 }
-

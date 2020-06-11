@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/control_screen.dart';
-import 'screens/welcome.dart';
+import 'screens/favourites.dart';
+import 'screens/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,12 +20,9 @@ class MyApp extends StatelessWidget {
 //        textTheme: Theme.of(context).textTheme.apply(displayColor:Color(0xff2d438d)),
 
 
-      ),
-      home: ControlScreen(),
-
-
+        ),
+        home: ControlScreen(),
 
     );
-
   }
 }

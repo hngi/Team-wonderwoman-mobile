@@ -16,9 +16,7 @@ class _HomePageState extends State<HomePage> {
   String _name="";
 
   @override void initState() {
-    // SharedPreferences pref;
     SharedPreferences.getInstance().then((prefs){
-      // pref = prefs;
 
       object.getUserName(prefs).then((value){
       setState((){
@@ -38,7 +36,7 @@ class _HomePageState extends State<HomePage> {
     String greetingTime=greeting();
 
     return Scaffold(
-        bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomNavigation(),
         body: Stack(
           children: <Widget>[
             Container(

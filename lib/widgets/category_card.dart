@@ -8,6 +8,7 @@ class ExerciseCategory extends StatefulWidget {
   final String svgSrc;
   final String title;
   final String time;
+  final bool tapped=false;
 
 
 
@@ -47,7 +48,7 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
           color:Colors.transparent,
           child: InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder:(context){
+              Navigator.of(context).push( MaterialPageRoute(builder:(context){
                 return SingleExercise(
                     title: '${widget.title}',
                     svgSrc:'${widget.svgSrc}',
@@ -65,17 +66,18 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
                 padding: EdgeInsets.all(20.0),
               child: Column(
                 children: <Widget>[
-                  Align(
-                    alignment: Alignment.topRight,
-                    child:IconButton(
-                        icon:Icon(Icons.favorite_border),
-                        onPressed:(){
-                          if(alreadySaved==false){
-
-                          }
-                          },
-                    )
-                  ),
+//                  Align(
+//                    alignment: Alignment.topRight,
+//                    child:IconButton(
+//                      icon:Icon(Icons.favorite_border),
+//                      onPressed:(){
+//                        if(widget.tapped==false){
+//                          widget.tapped==true;
+//
+//                        }
+//                      },
+//                    )
+//                  ),
                   Spacer(), // creates space between the children of the column widget
                   Expanded(child: SvgPicture.asset('${widget.svgSrc}')),
                   Spacer(),
@@ -105,4 +107,5 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
 
 
 }
+
 
