@@ -36,7 +36,7 @@ class SharedPreferencesHelper{
 
   }
   Future<String>getUserWeight(SharedPreferences pref)async{
-    return pref.getString(_kUserWeight == null ? '0' : pref.getString(_kUserWeight));
+    return pref.getString(_kUserWeight);
 
 
   }
@@ -46,7 +46,7 @@ class SharedPreferencesHelper{
 
   }
   Future<String>getUserHeight(SharedPreferences pref)async{
-    return pref.getString(_kUserHeight == null ? '0.0' : pref.getString(_kUserHeight));
+    return pref.getString(_kUserHeight );
 
 
   }

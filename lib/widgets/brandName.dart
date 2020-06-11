@@ -9,11 +9,10 @@ Widget brandName() {
       child: Center(
         child: ListTile(
           contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
-          leading: Expanded(
-              child: SvgPicture.asset('images/dumbbell.svg',
-                color: Color(0xffF982C6),
-                height: 30.0,
-                width: 30.0,)),
+          leading: SvgPicture.asset('images/dumbbell.svg',
+            color: Color(0xffF982C6),
+            height: 30.0,
+            width: 30.0,),
           title: Text('iFitness',
             style: TextStyle(
                 color: Colors.black87,

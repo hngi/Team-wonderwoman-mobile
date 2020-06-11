@@ -205,8 +205,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 int bodyMassIndex(String weight, String height){
   var newWeight=double.parse(weight);
   var newHeight=double.parse(height);
-  
 
+  
   var heightSquared=pow(newHeight,2);
   double result=newWeight/heightSquared;
 
