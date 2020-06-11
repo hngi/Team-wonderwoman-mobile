@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../screens/favourites.dart';
 import '../screens/home.dart';
 import '../screens/profile.dart';
+import 'destination.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationBarState extends State<BottomNavigation> {
+  final fontStyle=new TextStyle(fontFamily: 'Work Sans/WorkSans-Regular');
   int _selectedIndex = 0;
 
   // function when the icon is tapped it takes the selected index and change the screen
@@ -43,35 +45,20 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: BottomNavigationBar(
-        items:const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Exercises',
-              style: TextStyle(
-                  fontFamily: 'Work Sans/WorkSans-Regular'
-              ),)
-          ),
-          BottomNavigationBarItem(
-            icon:Icon(Icons.star),
-            title: Text('Favourites',
-              style: TextStyle(
-                  fontFamily: 'Work Sans/WorkSans-Regular'
-              ),)
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin),
-            title: Text('Profile',
-            style: TextStyle(
-                fontFamily: 'Work Sans/WorkSans-Regular'
-            ),)
-          ),],
-
-//        currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff2d438d),
+      child:BottomNavigationBar(
+          items: allDestinations.map((Destination destination) {
+            return BottomNavigationBarItem(
+                icon: Icon(destination.icon),
+                backgroundColor: destination.color,
+                title: Text(destination.title)
+            );
+          }).toList(),
         onTap: _onItemTapped,
-      ),
+//        selectedItemColor: destination.color,
+      )
     );
   }
 }
+
+
 

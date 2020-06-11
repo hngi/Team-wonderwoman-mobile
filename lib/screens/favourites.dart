@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import '../widgets/bottom_navigation.dart';
+import 'package:ifitness/widgets/destination.dart';
 
 class FavouritesPage extends StatefulWidget {
+  const FavouritesPage({ Key key, this.destination }) : super(key: key);
+
+  final Destination destination;
   @override
   _FavouritesPageState createState() => _FavouritesPageState();
 }

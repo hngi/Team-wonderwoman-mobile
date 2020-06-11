@@ -5,8 +5,12 @@ import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/category_card.dart';
 import 'package:ifitness/userData.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ifitness/widgets/destination.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({ Key key, this.destination }) : super(key: key);
+
+  final Destination destination;
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -22,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
       object.getUserName(prefs).then((value){
       setState((){
-        _name = value + "something";
+        _name = value;
       });
     });
     });
@@ -31,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
 
     var size=MediaQuery.of(context)
     .size; // this will give us the total height and width of our device.
@@ -125,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 ExerciseCategory(
                                   title: "Aerobics",
-                                  svgSrc: "images/aerobics.svg",
+                                  svgSrc: "images/workout.svg",
                                   time:"12 mins",
 
                                 ),

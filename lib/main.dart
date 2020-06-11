@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/control_screen.dart';
-import 'screens/welcome.dart';
+import 'screens/favourites.dart';
+import 'screens/profile.dart';
+import 'screens/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +23,11 @@ class MyApp extends StatelessWidget {
 
       ),
       home: ControlScreen(),
+      routes: <String, WidgetBuilder>{
+        '/favourites': (BuildContext context) => new FavouritesPage(),
+        '/profile': (BuildContext context) => new ProfileScreen(),
+        '/home':(BuildContext context)=> new HomePage(),
+      },
 
 
 

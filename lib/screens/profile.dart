@@ -3,10 +3,13 @@ import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/userData.dart';
 import 'dart:math';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:ifitness/widgets/destination.dart';
 
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({ Key key, this.destination }) : super(key: key);
+
+  final Destination destination;
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
@@ -145,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             padding: const EdgeInsets.symmetric(
                                 vertical: 16, horizontal: 24),
                             child: Text(
-                              'Your BMI is',
+                              'Your BMI is :',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
@@ -203,11 +206,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 //Function to calculate body mass Index
 
 int bodyMassIndex(String weight, String height){
-  var newWeight=double.parse(weight);
+  var newWeight=int.parse(weight);
   var newHeight=double.parse(height);
   
 
-  var heightSquared=pow(newHeight,2);
+  int heightSquared=pow(newHeight,2);
   double result=newWeight/heightSquared;
 
   return result.round();
