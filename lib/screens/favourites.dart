@@ -14,6 +14,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
       body:SingleChildScrollView(
         child:Stack(
           children: <Widget>[

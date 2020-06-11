@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
     String greetingTime=greeting();
 
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
         body: Stack(
           children: <Widget>[
             Container(
