@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 Widget brandName() {
   return Padding(
-    padding: const EdgeInsets.only(right: 60.0,left: 60.0),
+    padding: const EdgeInsets.only(right: 60.0,left: 100.0),
     child: Card(
       elevation:0.0,
       child: Center(

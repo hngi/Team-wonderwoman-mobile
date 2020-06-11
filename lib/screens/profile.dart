@@ -194,15 +194,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 //Function to calculate body mass Index
 
-double bodyMassIndex(String weight, String height){
-  var newWeight=int.tryParse(weight);
-  var newHeight=int.tryParse(height);
+int bodyMassIndex(String weight, String height){
+  var newWeight=double.parse(weight);
+  var newHeight=double.parse(height);
   
 
   var heightSquared=pow(newHeight,2);
-  var result=newWeight/heightSquared;
+  double result=newWeight/heightSquared;
 
-  return result;
+  return result.round();
 
 }
 

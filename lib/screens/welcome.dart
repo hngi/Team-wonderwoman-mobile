@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             brandName(),
             Padding(
@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
               'WELCOME TO IFitness,LET US GET YOU INTO SHAPE',textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Work Sans/WorkSans-ExtraLight',
-                  fontSize: 34.0,
+                  fontSize: 40.0,
 
                 ),
               ),
