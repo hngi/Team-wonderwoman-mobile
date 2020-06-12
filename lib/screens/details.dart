@@ -60,9 +60,7 @@ class _UserDetailsState extends State<UserDetails> {
                           keyboardType: TextInputType.text,
                           controller: nameTextController,
                           decoration: InputDecoration(
-                            border: OutlineInputBorder().copyWith(
-                        borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide.none),
+                            border: OutlineInputBorder(),
                             hintText: 'John Doe'
                           ),
                           validator: (value) {
@@ -80,9 +78,7 @@ class _UserDetailsState extends State<UserDetails> {
                           keyboardType: TextInputType.number,
                           controller: weightTextController,
                           decoration: InputDecoration(
-                            border: OutlineInputBorder().copyWith(
-                        borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide.none),
+                            border: OutlineInputBorder(),
                             hintText: 'e.g 45'
                           ),
                           validator: (value) {
@@ -100,9 +96,8 @@ class _UserDetailsState extends State<UserDetails> {
                           keyboardType: TextInputType.number,
                           controller: heightTextController,
                           decoration: InputDecoration(
-                            border: OutlineInputBorder().copyWith(
-                             borderRadius: BorderRadius.circular(40),
-                             borderSide: BorderSide.none),
+                            border: OutlineInputBorder(),
+
                             hintText: 'e.g 1.65',
                           ),
                           validator: (value) {
@@ -120,7 +115,9 @@ class _UserDetailsState extends State<UserDetails> {
                                 fontFamily: 'Work Sans/WorkSans-Regular'
                             )),
                         color: Color(0xff2d438d),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
                         onPressed: () async {
                           await saveCredentials();
                           //the next page after user feeds in necessary credentials
@@ -151,6 +148,7 @@ class _UserDetailsState extends State<UserDetails> {
      object.saveUserHeight(heightTextController.text,prefs);
      object.saveUserWeight(weightTextController.text,prefs);
     }
+
   }
 
   // Initialize sharedpreferences in this file
