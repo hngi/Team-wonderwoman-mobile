@@ -29,13 +29,6 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
         _selectedIndex = index;
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
-              return  FavouritesPage();
-            }));
-      }
-      else{
-        _selectedIndex = index;
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context){
               return  ProfileScreen();
             }));
       }
@@ -56,13 +49,7 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
                   fontFamily: 'Work Sans/WorkSans-Regular'
               ),)
           ),
-          BottomNavigationBarItem(
-            icon:Icon(Icons.star),
-            title: Text('Favourites',
-              style: TextStyle(
-                  fontFamily: 'Work Sans/WorkSans-Regular'
-              ),)
-          ),
+
           BottomNavigationBarItem(
               icon: Icon(Icons.person_pin),
             title: Text('Profile',

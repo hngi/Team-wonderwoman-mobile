@@ -22,7 +22,6 @@ class ExerciseCategory extends StatefulWidget {
 }
 
 class _ExerciseCategoryState extends State<ExerciseCategory> {
-   bool alreadySaved=false;
 
    final Set<ExerciseCategory>_saved=Set<ExerciseCategory>();
 
@@ -56,30 +55,15 @@ class _ExerciseCategoryState extends State<ExerciseCategory> {
               }));
 
             },
-            onDoubleTap: (
-
-
-                ){
-
-            },
             child: Padding(
                 padding: EdgeInsets.all(20.0),
               child: Column(
                 children: <Widget>[
-//                  Align(
-//                    alignment: Alignment.topRight,
-//                    child:IconButton(
-//                      icon:Icon(Icons.favorite_border),
-//                      onPressed:(){
-//                        if(widget.tapped==false){
-//                          widget.tapped==true;
-//
-//                        }
-//                      },
-//                    )
-//                  ),
+
                   Spacer(), // creates space between the children of the column widget
-                  Expanded(child: SvgPicture.asset('${widget.svgSrc}')),
+                  SvgPicture.asset('${widget.svgSrc}',
+                  height: 80.0,
+                  width: 80.0,),
                   Spacer(),
                   Text(
                     '${widget.title}',

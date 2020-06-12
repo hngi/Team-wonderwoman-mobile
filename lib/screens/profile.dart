@@ -90,6 +90,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           if (enable == false) {
                             edit = 'DONE';
                             enable = true;
+                            
                           } else if (enable == true) {
                             edit = 'EDIT';
                             enable = false;

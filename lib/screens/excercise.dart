@@ -14,17 +14,13 @@ class SingleExercise extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff72c3f9),
-appBar: AppBar(
-  elevation: 0.0,
-  backgroundColor: Colors.transparent
+      appBar: AppBar(
+      elevation: 0.0,
+      backgroundColor: Colors.transparent
 ),
-    bottomNavigationBar: BottomNavigation(),
+//      bottomNavigationBar: BottomNavigation(),
       body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Expanded(child: ExerciseCard(title:title ,svgSrc:svgSrc ,time:time,)),
-          ],
-        ),
+        child: ExerciseCard(title:title ,svgSrc:svgSrc ,time:time,),
       ),
 
     );

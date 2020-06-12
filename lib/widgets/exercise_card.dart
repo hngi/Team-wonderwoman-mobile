@@ -74,24 +74,23 @@ class _ExerciseCardState extends State<ExerciseCard> {
                     SvgPicture.asset(widget.svgSrc, height: size.height * .15),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Countdown(
-            controller: controller,
-            seconds: 900,
-            interval: Duration(milliseconds: 100),
-            build: (_, times) => Text(
-              times.toString(),
-              style: TextStyle(
-                  fontFamily: 'Work Sans/WorkSans-Bold',
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black),
-            ),
-            onFinished: () {
-              setState(() {
-                countTime = widget.time;
-              });
-            },
-          ),
+                      child:
+                       Countdown(
+                         controller: controller,
+                         seconds: 900,
+                         interval:
+                         Duration(milliseconds: 100),
+                         build: (_, times) => Text(
+                         times.toString(),
+                         style: TextStyle(
+                             fontFamily: 'Work Sans/WorkSans-Bold',
+                             fontSize: 30.0,
+                             fontWeight: FontWeight.w600,
+                             color: Colors.black),),
+                        onFinished: () {
+                           setState(() {
+                           countTime = widget.time;
+                           });},),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
