@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:ifitness/widgets/control_screen.dart';
 import 'screens/favourites.dart';
@@ -26,3 +27,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
