@@ -10,7 +10,6 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationBarState extends State<BottomNavigation> {
- 
 
   int _selectedIndex = 0;
 
@@ -18,49 +17,53 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if(index==0){
-        _selectedIndex = index;
+    });
+    switch (_selectedIndex) {
+      case 0:
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
               return  HomePage();
             }));
-      }
-      else if(index==1){
-        _selectedIndex = index;
+        break;
+      case 1:
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context){
               return  ProfileScreen();
             }));
-      }
+        break;
+    }
 
-    });
   }
 
   @override
   Widget build(BuildContext context) {
 
     return Container(
-      child: BottomNavigationBar(
-        items:const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Exercises',
+        child: BottomNavigationBar(
+          items:const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              title: Text('Exercises',
+                style: TextStyle(
+                    fontFamily: 'Work Sans/WorkSans-Regular'
+                ),)
+            ),
+
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_pin),
+              title: Text('Profile',
               style: TextStyle(
                   fontFamily: 'Work Sans/WorkSans-Regular'
               ),)
-          ),
+            ),],
 
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin),
-            title: Text('Profile',
-            style: TextStyle(
-                fontFamily: 'Work Sans/WorkSans-Regular'
-            ),)
-          ),],
+         currentIndex: _selectedIndex,
+          selectedItemColor: Color(0xff2d438d),
+          onTap: _onItemTapped,
+        ));
 
-       currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff2d438d),
-        onTap: _onItemTapped,
-      ));
   }
+
 }
+
+

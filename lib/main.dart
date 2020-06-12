@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:ifitness/screens/home.dart';
 import 'package:ifitness/widgets/control_screen.dart';
 import 'screens/favourites.dart';
 import 'screens/profile.dart';
