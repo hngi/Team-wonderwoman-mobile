@@ -42,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     var size = MediaQuery.of(context).size;
     return Scaffold(
-//      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomNavigation(),
       body: SingleChildScrollView(
         child: Stack(
           children: <Widget>[

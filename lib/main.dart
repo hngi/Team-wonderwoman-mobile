@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         ),
         home: Scaffold(
-          bottomNavigationBar: BottomNavigation(),
+//          bottomNavigationBar: BottomNavigation(),
             body: ControlScreen()),
 
 
