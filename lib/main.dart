@@ -1,10 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:ifitness/screens/home.dart';
-import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/control_screen.dart';
-import 'screens/favourites.dart';
-import 'screens/profile.dart';
+import 'package:ifitness/widgets/navigation.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -25,7 +23,6 @@ class MyApp extends StatelessWidget {
 
         ),
         home: Scaffold(
-//          bottomNavigationBar: BottomNavigation(),
             body: ControlScreen()),
 
 
