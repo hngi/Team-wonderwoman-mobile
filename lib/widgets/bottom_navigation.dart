@@ -1,8 +1,6 @@
 // this is the bottom navigation widget that will be applied to different screens
 import 'package:flutter/material.dart';
-import 'package:ifitness/screens/details.dart';
-import 'package:ifitness/screens/welcome.dart';
-import '../screens/favourites.dart';
+
 import '../screens/home.dart';
 import '../screens/profile.dart';
 

@@ -2,7 +2,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:ifitness/widgets/bottom_navigation.dart';
 import 'package:ifitness/widgets/exercise_card.dart';
 
 
